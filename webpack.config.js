@@ -10,8 +10,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'eval-source-map',
-  devServer: {               
-    contentBase: './dist'    
+  devServer: {
+    contentBase: './dist'
   },
   plugins: [
     new ESLintPlugin(),
@@ -30,7 +30,13 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
-      }
+      },
+      {
+        test: /\.html$/,
+        use: [
+          'html-loader'
+        ]
+      },
     ]
   }
 };
